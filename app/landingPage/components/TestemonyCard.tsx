@@ -12,7 +12,7 @@ export const TestemonyCard = () => {
     return (
         <div className=" h-full w-full ">
             <Carousel loop autoplay
-            
+
                 prevArrow={({ handlePrev }) => (
                     <IconButton
                         variant="text"
@@ -35,12 +35,12 @@ export const TestemonyCard = () => {
                         <RightArrow />
                     </IconButton>
                 )}
-                navigation={()=><></>}
+                navigation={() => <></>}
                 className="rounded-xl " transition={{ duration: 2 }} autoplayDelay={5000}>
                 {data.map((item, i) => <div className="flex flex-col w-full h-full gap-1  place-items-center" key={i}>
                     <img className="w-[62px] h-[62px] rounded-full object-cover" src={item.image} />
                     <span className="text-[#343537] text-2xl">{item.name}</span>
-                    <span className="text-[#A5A6A7] text-center">{item.text}</span>
+                    <span className="text-[#A5A6A7] text-[18px] leading-[21px] text-center">{item.text}</span>
                 </div>)}
             </Carousel>
         </div>

@@ -1,6 +1,6 @@
-import { ConnectButton } from "../";
+import { ConnectButton } from "..";
 import { Facebook, Google, Twitter } from "../../../icons";
-import { LoginForm } from "../";
+import { LoginForm } from "..";
 import { FormikProps } from "formik";
 import Link from "next/link";
 export const LoginCard = ({ formik }: { formik: FormikProps<LoginFormProps> }) => {

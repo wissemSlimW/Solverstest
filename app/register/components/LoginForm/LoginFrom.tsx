@@ -1,7 +1,7 @@
 "use client"
 import { FormikProps } from 'formik'
 import React from 'react'
-import { TextInput } from '../'
+import { TextInput } from '..'
 import { Button, Checkbox } from '@material-tailwind/react'
 import Link from 'next/link'
 
