@@ -17,7 +17,7 @@ const LandingPage = () => {
                         </div>
                     </div>
                     <div className='flex flex-col w-full  lg:w-1/2  gap-10'>
-                        <label for="formFile" className='flex flex-col mx-auto w-4/5 md:w-full  place-items-center aspect-video place-content-center
+                        <label htmlFor="formFile" className='flex flex-col mx-auto w-4/5 md:w-full  place-items-center aspect-video place-content-center
                             cursor-pointer bg-gradient-to-br from-[#DBB898] to-[#9DC1CE] rounded-[14px]'>
                             <span className='border-solid border-2 border-[#343537] p-[19.5px] rounded-full'><Upload /></span>
                             <span className='text-[#343537] text-[34px]'>Upload CV</span>
