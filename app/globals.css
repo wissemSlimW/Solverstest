@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: #f5efe6;
+  --font-PT-serif: PT serif;
+  --font-Cabin: Cabin;
+}
+
+body {
+  background-color: var(--foreground-rgb);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100vh;
+}
