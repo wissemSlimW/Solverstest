@@ -1,9 +1,18 @@
 "use client"
 import { useFormik } from "formik";
 import { LoginCard } from "./components";
+import { useEffect } from "react";
+import { redirect } from 'next/navigation'
+import { useUser } from "@auth0/nextjs-auth0/client";
 
-export default function Home() {
-
+const Home = () => {
+  const { user, error, isLoading } = useUser()
+  console.log({ user })
+  useEffect(() => {
+    if (!isLoading && user) {
+      redirect('/landingPage')
+    }
+  }, [user, isLoading])
   const formik = useFormik<LoginFormProps>({
     validateOnBlur: true,
     enableReinitialize: true,
@@ -23,7 +32,9 @@ export default function Home() {
 
       return errors
     },
-    onSubmit: (data) => { },
+    onSubmit: (data) => {
+
+    },
   })
 
   return (
@@ -32,3 +43,4 @@ export default function Home() {
     </main>
   )
 }
+export default Home
