@@ -1,5 +1,5 @@
 import { ConnectButton } from "../";
-import { Facebook, Google, Twitter } from "../../icons";
+import { Facebook, Google, Twitter } from "../../../icons";
 import { LoginForm } from "../";
 import { FormikProps } from "formik";
 import Link from "next/link";

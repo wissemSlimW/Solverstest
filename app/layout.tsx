@@ -29,7 +29,7 @@ export default function RootLayout({
       <UserProvider>
         <body className={` ${ptSerif.className} ${cabin.variable} ${ptSerif.variable}`}>
           <Header />
-          <div className="flex-1 flex flex-col overflow-hidden">
+          <div className="flex-1 flex  flex-col overflow-hidden">
             {children}
           </div>
         </body>

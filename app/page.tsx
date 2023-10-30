@@ -1,45 +1,26 @@
 "use client"
-import { useFormik } from "formik";
-import { LoginCard } from "./components";
+
 import { useEffect } from "react";
 import { redirect } from 'next/navigation'
 import { useUser } from "@auth0/nextjs-auth0/client";
+import { Spinner } from "@material-tailwind/react";
 
 const Home = () => {
   const { user, error, isLoading } = useUser()
-  console.log({ user })
   useEffect(() => {
-    if (!isLoading && user) {
-      redirect('/landingPage')
+    if (!isLoading) {
+      if (!isLoading && user) {
+        redirect('/landingPage')
+      }
+      else { redirect('/register') }
     }
   }, [user, isLoading])
-  const formik = useFormik<LoginFormProps>({
-    validateOnBlur: true,
-    enableReinitialize: true,
-    initialValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      sub: false,
-    },
-    validate: (data) => {
-      let errors: Partial<Record<keyof LoginFormProps, string>> = {}
-      errors = { ...errors, ...!data.email ? { 'email': 'Field required' } : {} }
-      errors = { ...errors, ...!data.firstName ? { 'firstName': 'Field required' } : {} }
-      errors = { ...errors, ...!data.lastName ? { 'lastName': 'Field required' } : {} }
-      errors = { ...errors, ...!data.password ? { 'password': 'Field required' } : {} }
 
-      return errors
-    },
-    onSubmit: (data) => {
-
-    },
-  })
 
   return (
-    <main className={`flex  flex-col items-center overflow-auto`}>
-      <LoginCard {...{ formik }} />
+    <main className={`flex flex-1 flex-col items-center place-content-center overflow-auto`}>
+      <Spinner color="amber" className="h-12 w-12" />
+      <b className="text-Cabin text-amber-500 text-[20px]">Loading...</b>
     </main>
   )
 }
